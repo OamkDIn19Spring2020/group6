@@ -1,0 +1,37 @@
+List of shit to do:
+    ☐ Any notes for Kari
+    ✔ Maybe test teams is working ok before tomorrow @done(25-03-20 12:49)
+    ✔ In GitHub: Click "PullRequest" and then "New pull request". to send to Pekka for master branch @done(25-03-20 12:49)
+    ☐ Make a basic navigation for all pages needed and merge to dev branch
+    ☐ plan out who works on what part
+
+
+Main page:
+    ☐ login
+    ☐ registration
+    ☐ homepage - products on offer
+    ☐ forum * if time allows
+Logged In Page:
+    ☐ calandar
+    ☐ manage accounts
+        manage accounts:
+            ☐ email
+            ☐ avatar
+            ☐ settings
+    ☐ stats
+        stats:
+            ☐ form that can be edited
+    ☐ products
+        payment page:
+            ☐ payment system handler after choosing a product
+    ☐ purchase history
+    ☐ Write on forum
+    ☐ exit button
+Admin Logged In Page:
+    ☐ access members - add/remove
+    ☐ add/remove/edit programs *Not a major
+    ☐ 
+If we have time:
+    ☐ basic forum when logged in as  user - add to forum
+    ☐ admins are moderators add/delete/
+    ☐ Admin chat
