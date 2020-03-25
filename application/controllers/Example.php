@@ -6,14 +6,13 @@ class Example extends CI_Controller
 
     public function index()
     {
-        // echo 'I am the index method in Exampe-controller';
-        // $this->load->view('menu/example');
+        $data['page'] = 'pages/first';
+        $this->load->view('menu/content', $data);
     }
     //Before login page
     public function first()
     {
-        $data['page'] = 'pages/first';
-        $this->load->view('menu/content', $data);
+
     }
     //After login page
     public function second()
