@@ -1,6 +1,4 @@
-<h2>This is footer</h2>
-
-</div>
+<div class="footer-right"> </div>
 </body>
 
 </html>
