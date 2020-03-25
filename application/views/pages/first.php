@@ -59,13 +59,16 @@ function showSlides(n) {
     <!--SIDE BAR STARTS HERE-->
 
     <div id="sideBar">
-        <!--LOGIN FORM-->
-        <div class="authorization">
+      <!--LOGIN FORM-->
+      
+      <div class="authorization">
             <div class="login">
-                <p>Username<br> <input id="username"></p>
-                <p>Password<br> <input id="password"></p>
-                <p><button id="login-button">LOGIN</button><br></p>
-                <p style="margin-left: 87px; font-size: 12px; margin-top: -8px;">Forgot password?</p>
+                <form class="login_form" action="<?php echo site_url('login/login'); ?>" method="post">
+                  <p>Username<br> <input type='text' name='username' id="username"></p>
+                  <p>Password<br> <input type='text' name='password' id="password"></p>
+                  <p><input type='submit' id="login-button" value='LOGIN'><br></p>
+                  <a href="#"><p style="margin-left: 87px; font-size: 12px; margin-top: -8px;">Forgot password?</p></a>
+                </form>
             </div>
         <!--REGISTRATION FORM-->
             <div class="registration">
@@ -77,7 +80,7 @@ function showSlides(n) {
                 <p><input type="date" style="color: white; font-family: 'Play', sans-serif; ;"></p>
                 <p><button id="register-button">REGISTER</button><br></p>
             </div>
-            </div>
+      </div>
 
 <ul>
             <li><a href=<?php echo site_url('example/first'); ?>>first page</a></li>
