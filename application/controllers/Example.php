@@ -9,15 +9,16 @@ class Example extends CI_Controller
         // echo 'I am the index method in Exampe-controller';
         // $this->load->view('menu/example');
     }
+    //Before login page
     public function first()
     {
-        echo 'I am the first method in Example-controller';
-        $data['page'] = 'example/first';
+        $data['page'] = 'pages/first';
         $this->load->view('menu/content', $data);
     }
+    //After login page
     public function second()
     {
-        $data['page'] = 'example/second';
+        $data['page'] = 'pages/second';
         $this->load->view('menu/content', $data);
     }
 
