@@ -1,6 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="testcss.css">
+    <link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
+</head> 
 
+ 
     <!-- CONTENT STARTS HERE-->
-    <div id="page">
+  <div id="page">
     <div id="content">
       <div class="slideshow">
          <!-- Full-width images with number and caption text -->
@@ -74,12 +84,14 @@ function showSlides(n) {
                 <p>Username<br> <input id="reg-username"></p>
                 <p>Password<br> <input id="reg-password"></p>
                 <p>E-mail<br> <input id="reg-email" type="email"></p>
-                <p><input type="date" style="color: white; font-family: 'Play', sans-serif; ;"></p>
+                <p>Date of Birth<br><input type="date" style="color: white; font-family: 'Play', sans-serif; ;"></p>
                 <p><button id="register-button">REGISTER</button><br></p>
             </div>
             </div>
-
-<ul>
-            <li><a href=<?php echo site_url('example/first'); ?>>first page</a></li>
-            <li><a href=<?php echo site_url('example/second'); ?>>second page</a></li>
+    </div>
+    <ul>
+            <li><a href=<?php echo site_url('PulseUp/second'); ?>>second page</a></li>
         </ul>
+  </div>
+  
+</html>

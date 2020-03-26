@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Example extends CI_Controller
+class PulseUp extends CI_Controller
 {
 
     public function index()
