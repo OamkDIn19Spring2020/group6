@@ -1,5 +1,10 @@
 <?php
-echo '<h2>After login in</h2>';
+if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true){
+    echo 'You have succesfully logged in. Welcome '.$_SESSION['username'];
+  }
+  else {
+    echo 'You have not provided valid login credentials. Welcome Guest';
+  }
 ?>
 
 <ul>

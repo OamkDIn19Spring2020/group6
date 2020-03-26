@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_controller{
 
-    public function __construct()
+  public function __construct()
   {
     parent::__construct();
     //Codeigniter : Write Less Do More
@@ -13,7 +13,7 @@ class Login extends CI_controller{
     $data['page']='first';
     $this->load->view('menu/content',$data);
   }
-  public function login(){
+  public function Login(){
     $given_username=$this->input->post('username');
     $given_password=$this->input->post('password');
 
@@ -23,9 +23,17 @@ class Login extends CI_controller{
            $_SESSION['logged_in']=true;
            $_SESSION['username']=$given_username;
            redirect('example/second');
+         }else{
+           $_SESSION['logged_in']=false;
+           redirect('example/second');
          }
   }
-
+  public function logout(){
+    // $_SESSION['logged_in']=false;
+    session_destroy();
+    $data['page']='login/logout';
+    $this->load->view('menu/content',$data);
+  }
 }
 
 
