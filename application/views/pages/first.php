@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="testcss.css">
+    <link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
+</head> 
 
 <!-- CONTENT STARTS HERE-->
 <div id="page">
@@ -66,6 +75,7 @@
         <p>Username<br> <input type='text' name='username' id="username"></p>
         <p>Password<br> <input type='password' name='password' id="password"></p>
         <p><input type='submit' id="login-button" value='LOGIN'><br></p>
+        <!-- TODO need path for href --> 
         <a href="#"><p style="margin-left: 87px; font-size: 12px; margin-top: -8px;">Forgot password?</p></a>
       </form>
   </div>
@@ -76,13 +86,12 @@
       <p>Username<br> <input id="reg-username"></p>
       <p>Password<br> <input id="reg-password"></p>
       <p>E-mail<br> <input id="reg-email" type="email"></p>
-      <p><input type="date" style="color: white; font-family: 'Play', sans-serif; ;"></p>
+      <p>Date of Birth<br><input type="date" style="color: white; font-family: 'Play', sans-serif; ;"></p>
       <p><button id="register-button">REGISTER</button><br></p>
   </div>
 </div>
 </div>
 
 <ul>
-  <li><a href=<?php echo site_url('example/first'); ?>>first page</a></li>
-  <li><a href=<?php echo site_url('example/second'); ?>>second page</a></li>
+  <li><a href=<?php echo site_url('PulseUp/second'); ?>>second page</a></li>
 </ul>

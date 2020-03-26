@@ -22,10 +22,10 @@ class Login extends CI_controller{
     if($given_username===$real_username && $given_password===$real_password){
            $_SESSION['logged_in']=true;
            $_SESSION['username']=$given_username;
-           redirect('example/second');
+           redirect('pulseup/second');
          }else{
            $_SESSION['logged_in']=false;
-           redirect('example/second');
+           redirect('pulseup');
          }
   }
   public function logout(){
