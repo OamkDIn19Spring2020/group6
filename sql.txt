@@ -1,0 +1,13 @@
+CREATE DATABASE fitness;
+
+USE DATABASE fitness;
+
+CREATE TABLE users(
+    user_id INT primary key auto_increment,
+    username VARCHAR(20),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    birthdate VARCHAR(255)
+    );
+
+D0FjdpAaKZ
