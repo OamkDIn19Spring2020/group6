@@ -100,7 +100,7 @@
             <div class="navigation">
                 <div><a href="#">Calendar</a></div>
                 <div><a href="#">Manage Account</a></div>
-                <div><a href="#">Stats</a></div>
+                <div><a href=<?php echo site_url('PulseUp/stats') ?>>Stats</a></div>
                 <div><a href="#">Products</a></div>
                 <div><a href="#">Purchase History</a></div>
                 <a id="logout-button" href="<?php echo site_url('PulseUp/index') ?>"><img

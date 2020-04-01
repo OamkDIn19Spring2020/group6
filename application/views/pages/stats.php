@@ -78,7 +78,7 @@
             <div>Stats</div>
             <div>Products</div>
             <div>Purchase History</div>
-            <a id="logout-button"><img src=<?php echo base_url('images/logout.png'); ?>></a>
+            <a id="logout-button" href=<?php echo site_url('PulseUp/index') ?>><img src=<?php echo base_url('images/logout.png'); ?>></a>
         </div>
           
         </div>
