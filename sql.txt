@@ -10,3 +10,10 @@ CREATE TABLE register_user(
     email VARCHAR(255),
     password VARCHAR(255)
 );
+
+CREATE TABLE user_stats(
+    id INT primary key auto_increment,
+    weight VARCHAR(3),
+    height VARCHAR(3),
+    age VARCHAR(3)
+);
