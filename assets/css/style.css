@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+* {
+  box-sizing: border-box;
+}
+
 html {
   height: 100%;
   background-color: #181818;
@@ -11,13 +16,11 @@ a {
   text-decoration: none;
 }
 
-a:hover 
-{
-   color:white;
-   text-decoration:none; 
-   cursor:pointer;  
+a:hover {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
 }
-
 
 body {
   height: 100%;
@@ -27,7 +30,7 @@ body {
 
 #page {
   display: flex;
-  height:  100vh;
+  height: 100vh;
 }
 
 #sideBar {
@@ -37,7 +40,7 @@ body {
 }
 
 #content {
-    flex: 1 0 auto;
+  flex: 1 0 auto;
   /* enable grow, disable shrink */
 }
 
@@ -50,7 +53,6 @@ body {
   height: 415px;
   background-color: #181818;
   border: 1px solid #ffffff;
-  
 }
 
 .authorization {
@@ -65,7 +67,6 @@ body {
   background-color: #1f1f1f;
   border: 1px solid #383838;
   color: #ffffff;
-
 }
 
 .login p {
@@ -73,21 +74,32 @@ body {
   padding-left: 25px;
 }
 
+/* Added code by Anthony for form validation */
+
+.form-group {
+  margin-top: 4px;
+  padding-left: 25px;
+}
+
+.text-danger {
+  color: red;
+}
+
 input {
   width: 268px;
   height: 36px;
   border-radius: 4px;
   background-color: #1f1f1f;
-  border: 1px solid rgba(247,238,238,0.72);
+  border: 1px solid rgba(247, 238, 238, 0.72);
   color: white;
   font-family: "Play";
 }
 
 .registration {
   color: #ffffff;
-  margin-top: 15px;
+  margin-top: 25px;
   width: 320px;
-  height: 420px;
+  height: 430px;
   border-radius: 4px;
   background-color: #1f1f1f;
   border: 1px solid #383838;
@@ -98,7 +110,6 @@ input {
   padding-left: 25px;
 }
 
-
 #login-button {
   color: #ffffff;
   font-family: "Play";
@@ -108,9 +119,10 @@ input {
   width: 270px;
   height: 36px;
   border-radius: 4px;
-  border:none;
+  border: none;
   background-color: #ff5500;
 }
+
 #register-button {
   color: #ffffff;
   font-family: "Play";
@@ -120,91 +132,105 @@ input {
   width: 270px;
   height: 36px;
   border-radius: 4px;
-  border:none;
+  border: none;
   background-color: #ff5500;
 }
 
 .bottom-text {
-line-height: 90%;
-padding-top: 50px;
+  line-height: 90%;
+  padding-top: 50px;
 }
 
 /* Hide the images by default */
+
 .mySlides {
-display: none;
+  display: none;
 }
 
 /* Next & previous buttons */
+
 .prev, .next {
-cursor: pointer;
-position: absolute;
-top: 50%;
-width: auto;
-margin-top: -22px;
-padding: 16px;
-color: white;
-font-weight: bold;
-font-size: 18px;
-transition: 0.6s ease;
-border-radius: 0 3px 3px 0;
-user-select: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
 }
 
 /* Position the "next button" to the right */
+
 .next {
-right: 0;
-border-radius: 3px 0 0 3px;
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
+
 .prev:hover, .next:hover {
-background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Caption text */
+
 .text {
-color: #f2f2f2;
-font-size: 15px;
-padding: 8px 12px;
-position: absolute;
-bottom: 8px;
-width: 100%;
-text-align: center;
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
 }
 
-
 /* The dots/bullets/indicators */
+
 .dot {
-cursor: pointer;
-height: 15px;
-width: 15px;
-margin: 0 2px;
-background-color: #bbb;
-border-radius: 50%;
-display: inline-block;
-transition: background-color 0.6s ease;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-background-color: #ff5500;
+  background-color: #ff5500;
 }
 
 /* Fading animation */
+
 .fade {
--webkit-animation-name: fade;
--webkit-animation-duration: 1.5s;
-animation-name: fade;
-animation-duration: 1.5s;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
 @-webkit-keyframes fade {
-from {opacity: .4}
-to {opacity: 1}
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
 }
 
 @keyframes fade {
-from {opacity: .4}
-to {opacity: 1}
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
 }
 
 .userDetails {
@@ -258,10 +284,9 @@ to {opacity: 1}
 .navigation div:hover {
   border-radius: 4px;
   background-color: #404040;
- 
 }
 
-#logout-button { 
+#logout-button {
   margin-right: 35px;
 }
 
@@ -270,6 +295,7 @@ to {opacity: 1}
   margin-left: 390px;
   border-spacing: 10px;
 }
+
 td {
   text-align: center;
   padding-right: 10px;
@@ -295,20 +321,30 @@ td {
 }
 
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 200px; /* Location of the box */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 200px;
+  /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Black w/ opacity */
 }
 
 /* Modal Content */
+
 .modal-content {
   text-align: center;
   background-color: #fefefe;
@@ -318,11 +354,13 @@ td {
   border: 8px solid #ff5500;
   width: 600px;
 }
+
 .modal i {
   font-size: 15px;
 }
 
 /* The Close Button */
+
 .close {
   color: #aaaaaa;
   float: right;
@@ -330,8 +368,7 @@ td {
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
