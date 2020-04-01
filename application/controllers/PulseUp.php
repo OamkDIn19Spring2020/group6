@@ -21,4 +21,11 @@ class PulseUp extends CI_Controller
         $this->load->view('menu/content', $data);
     }
 
+        //Stats page
+        public function stats()
+        {
+            $data['page'] = 'pages/stats';
+            $this->load->view('menu/content', $data);
+        }
+
 }
