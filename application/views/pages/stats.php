@@ -70,7 +70,7 @@
               <img src="<?php echo base_url('images/avatar.png'); ?>">
           </div>
           <div id="usernameDisplayed">
-            Nikola
+          <?php echo $_SESSION['username'] ?>
           </div>
           <div class="navigation">
             <div>Calendar</div>
