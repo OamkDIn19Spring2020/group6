@@ -1,5 +1,5 @@
 <!-- CONTENT STARTS HERE-->
-<div class="container">
+<div class="main-container">
     <div id="page">
         <div id="content">
             <div class="slideshow">
