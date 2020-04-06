@@ -28,8 +28,13 @@ body {
   font-family: 'Play', sans-serif;
 }
 
+.container {
+  display: flex;
+}
+
 #page {
   display: flex;
+  flex-direction: row;
   height: 100vh;
 }
 
@@ -406,6 +411,7 @@ td {
 .age-weight-height label {
   margin-left: 3px;
 }
+
 .age-weight-height input {
   margin-top: 3px;
   margin-bottom: 20px;

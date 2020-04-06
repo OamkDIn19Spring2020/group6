@@ -17,3 +17,5 @@ CREATE TABLE user_stats(
     height VARCHAR(3),
     age VARCHAR(3)
 );
+
+
