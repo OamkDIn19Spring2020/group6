@@ -1,7 +1,4 @@
-<!-- CONTENT STARTS HERE-->
-<div class="main-container">
-    <div id="page">
-        <div id="content">
+
             <div class="slideshow">
                 <!-- Full-width images with number and caption text -->
                 <div class="mySlides fade">
@@ -19,39 +16,38 @@
                     <span class="dot" onclick="currentSlide(3)"></span>
                 </div>
                 <script>
-                var slideIndex = 1;
-                showSlides(slideIndex);
+                    var slideIndex = 1;
+                    var timer = null;
+                    showSlides(slideIndex);
 
-                // Next/previous controls
-                function plusSlides(n) {
+                    function plusSlides(n) {
+                    clearTimeout(timer);
                     showSlides(slideIndex += n);
-                }
+                    }
 
-                // Thumbnail image controls
-                function currentSlide(n) {
+                    function currentSlide(n) {
+                    clearTimeout(timer);
                     showSlides(slideIndex = n);
-                }
+                    }
 
-                function showSlides(n) {
+                    function showSlides(n) {
                     var i;
                     var slides = document.getElementsByClassName("mySlides");
                     var dots = document.getElementsByClassName("dot");
-                    if (n > slides.length) {
-                        slideIndex = 1
-                    }
-                    if (n < 1) {
-                        slideIndex = slides.length
-                    }
+                    if (n==undefined){n = ++slideIndex}
+                    if (n > slides.length) {slideIndex = 1}
+                    if (n < 1) {slideIndex = slides.length}
                     for (i = 0; i < slides.length; i++) {
                         slides[i].style.display = "none";
                     }
                     for (i = 0; i < dots.length; i++) {
                         dots[i].className = dots[i].className.replace(" active", "");
                     }
-                    slides[slideIndex - 1].style.display = "block";
-                    dots[slideIndex - 1].className += " active";
-                }
-                </script>
+                    slides[slideIndex-1].style.display = "block";
+                    dots[slideIndex-1].className += " active";
+                    timer = setTimeout(showSlides, 5000);
+                    } 
+</script>
             </div>
 
             <div>

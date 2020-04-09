@@ -20,3 +20,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 <body>
     <div class="container">
+    <div class="main-container">
+    <div id="page">
+    <!-- CONTENT STARTS HERE-->
+
+        <div id="content">
+        <a href="#">
+            <div id="logo"><img src="<?php echo base_url('images/PULSEUP.png'); ?>"></div>
+        </a>
