@@ -4,9 +4,6 @@
     <li><a href=<?php echo site_url('example/second'); ?>>second page</a></li>
     <li><a href=<?php echo site_url('example'); ?>>log out</a></li>
 </ul> -->
-
-<div id="page">
-    <div id="content">
         <div>
             <table id="calendar">
                 <tr>

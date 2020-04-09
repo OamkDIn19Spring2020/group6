@@ -1,19 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulse Up</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
-</head>
-
-<div id="page">
-    <div id="content">
-        <a href="#">
-            <div id="logo"><img src="<?php echo base_url('images/PULSEUP.png'); ?>"></div>
-        </a>
         <div class="stats-main">
             <div id="stats-form">
                 <form action="<?php echo site_url('stats/validation'); ?>" method="post">
@@ -23,10 +7,10 @@
                     </div>
                     <div class="age-weight-height">
                         <label for="weight">Weight</label><br>
-                        <input class="stats-field" name="user_weight" value=<?php echo set_value('user_weight'); ?>>
+                        <input class="stats-field" name="user_weight" value="">
 
                         <label for="weight">Height</label><br>
-                        <input class="stats-field" name="user_height" value=<?php echo set_value('user_height'); ?>>
+                        <input class="stats-field" name="user_height" value=<?php ?>>
                         <label for="age">Age</label><br>
                         <input class="stats-field" name="user_age" value=<?php echo set_value('user_age'); ?>><br>
                         <div id="calculate-button"><button type="submit" name="calculate"
