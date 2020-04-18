@@ -13,8 +13,8 @@ class Stats extends CI_Controller
 
     public function index()
     {
-        $data['page'] = 'pages/stats';
-        $this->load->view('menu/content', $data);
+        $data['page'] = 'stats/stats_view';
+        $this->load->view('stats/menu/content_view', $data);
     }
 
     public function validation() {
@@ -26,20 +26,12 @@ class Stats extends CI_Controller
                 'name' => $name,
                 'weight' => $this->input->post('user_weight'),
                 'height' => $this->input->post('user_height'),
-                'age' => $this->input->post('user_age')
+                'age' => $this->input->post('user_age'),
             );
             $id = $this->stats_model->insert($data);
-            } else {
-                $data = array(
-                    'name' => $name,
-                    'weight' => $this->input->post('user_weight'),
-                    'height' => $this->input->post('user_height'),
-                    'age' => $this->input->post('user_age')
-                );
-                $id = $this->stats_model->upddata($data);
-                $this->load->view('pages/stats', $data);
-            }
+
         }
+    }
 }
 
 
