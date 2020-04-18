@@ -17,13 +17,15 @@ class Stats extends CI_Controller
         $this->load->view('stats/menu/content_view', $data);
     }
 
-    public function validation() {
-            $name = $_SESSION['username'];
-            $query = $this->db->get_where('user_stats', array('name' => $name));
-            $num = $query->num_rows();      
-            if ($num == 0) {
+    public function validation()
+    {
+        $this->form_validation->set_rules('user_weight', 'Weight', 'required|trim');
+        $this->form_validation->set_rules('user_height', 'Height', 'required|trim');
+        $this->form_validation->set_rules('user_age', 'Age', 'required|trim');
+        if ($this->form_validation->run()) {
+            $plain_password = $this->input->post('reg_password');
+            $hashed_password = password_hash($plain_password, PASSWORD_DEFAULT);
             $data = array(
-                'name' => $name,
                 'weight' => $this->input->post('user_weight'),
                 'height' => $this->input->post('user_height'),
                 'age' => $this->input->post('user_age'),
@@ -33,8 +35,6 @@ class Stats extends CI_Controller
         }
     }
 }
-
-
 
 /* End of file Stats.php */
 /* Location: ./application/controllers/Stats.php */
