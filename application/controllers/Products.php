@@ -11,8 +11,9 @@ class Products extends CI_Controller
 
     public function index()
     {
-        $data['page'] = 'pages/products';
-        $this->load->view('menu/content', $data);
+        // TODO
+        // $data['page'] = 'pages/products';
+        // $this->load->view('menu/content', $data);
     }
 
 }

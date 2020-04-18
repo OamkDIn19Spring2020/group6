@@ -11,8 +11,9 @@ class Purchase_history extends CI_Controller
 
     public function index()
     {
-        $data['page'] = 'pages/purchase_history';
-        $this->load->view('menu/content', $data);
+        // TODO
+        // $data['page'] = 'pages/purchase_history';
+        // $this->load->view('menu/content', $data);
     }
 
 }
