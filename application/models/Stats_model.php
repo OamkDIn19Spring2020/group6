@@ -27,6 +27,35 @@ class Stats_model extends CI_Model
         return $this->db->insert_id();
     }
 
+    public function upddata($data) {
+        extract($data);
+        $this->db->where('name', $data['name']);
+        $this->db->update('user_stats', array('weight' => $data['weight']));
+        $this->db->where('name', $data['name']);
+        $this->db->update('user_stats', array('height' => $data['height']));
+        $this->db->where('name', $data['name']);
+        $this->db->update('user_stats', array('age' => $data['age']));
+        return true;
+    }
+
+    public function get_data() {
+        $name = $_SESSION['username'];
+        $this->db->from("user_stats");
+        $this->db->where('name', $name);
+        $query = $this->db->get();  
+        return $query->result();
+    }
+
+    public function get_specific_data() {
+        $name = $_SESSION['username'];
+        $this->db->from("user_stats");
+        $this->db->where('name', $name);
+        $this->db->order_by('DateTime', 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get();  
+        return $query->result();
+    }
+
 
 }
 

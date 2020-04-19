@@ -4,24 +4,25 @@
         <div id="logo" class="text-center ml-5 mt-2"><img src="<?=base_url()?>assets/img/logo_img/PULSEUP.png"></div>
         <div class="stats-main">
             <div id="stats-form">
-                <form>
+            <form action="<?php echo site_url('stats/submit'); ?>" method="post">
                     <div class="gender-form">
                         <label for="gender">Gender</label><br>
-                        <input type="radio">Male &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio">Female
+                        <input type="radio" name="gender" value="male">Male &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="female">Female
                     </div>
                     <div class="age-weight-height">
                         <label for="weight">Weight</label><br>
-                        <input class="stats-field"><br>
+                        <input class="stats-field" name="user_weight"><br>
                         <label for="weight">Height</label><br>
-                        <input class="stats-field"><br>
-                        <label for="weight">Age</label><br>
-                        <input class="stats-field"><br>
-                        <div id="calculate-button"><button type="submit">Submit</button></div>
+                        <input class="stats-field" name="user_height"><br>
+                        <label for="age">Age</label><br>
+                        <input class="stats-field" name="user_age">
+                        <div id="calculate-button"><button type="submit" name="submit"
+                                value="calculate">SAVE</button></div>
                     </div>
                 </form>
             </div>
-            <div class="view-buttons"><button id="view-more">VIEW DETAILED STATS</button></div>
-            <div class="view-buttons"><button id="track-result">TRACK YOUR RESULTS</button></div>
+            <div class="view-buttons"><button id="view-more" onclick="window.location='<?php echo site_url("stats/view_progress");?>'">TRACK PROGRESS</button></div>
+            <div class="view-buttons"><button id="track-result" onclick="window.location='<?php echo site_url("stats/nutrition_info");?>'">VIEW NUTRITION INFO</button></div>
         </div>
 
     </div>

@@ -16,6 +16,16 @@ body {
     }
 }
 
+a {
+    color: white;
+    text-decoration: none; /* no underline */
+  }
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
 input {
     width: 268px;
     height: 36px;
@@ -116,8 +126,9 @@ input[type='radio'] {
     font-size: 15px;
 }
 
-.age-weight-height label {
+.age-weight-height p {
     margin-left: 3px;
+    margin-bottom: -20px;
 }
 
 .age-weight-height input {
