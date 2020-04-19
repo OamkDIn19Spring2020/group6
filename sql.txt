@@ -4,12 +4,6 @@ USE group6;
 
 GRANT ALL PRIVILEGES on group6.* to 'group6'@'localhost' IDENTIFIED BY 'group6_pass';
 
-CREATE TABLE user_stats(
-    id INT primary key auto_increment,
-    weight VARCHAR(3),
-    height VARCHAR(3),
-    age VARCHAR(3)
-);
 
 CREATE TABLE user_database(
     user_id INT primary key auto_increment,
@@ -57,20 +51,14 @@ CREATE TABLE member(
 
 
 CREATE TABLE user_stats(
-    id INT primary key auto_increment,
-    weight VARCHAR(3),
-    height VARCHAR(3),
-    age VARCHAR(3)
-);
-
-CREATE TABLE user_stats(
     stats_id INT primary key auto_increment,
-    name VARCHAR(255),
+    name VARCHAR (255),
     weight VARCHAR(3),
     height VARCHAR(3),
-    age VARCHAR(3)
+    age VARCHAR(3),
+    gender VARCHAR(10),
+    DateTime DATE
 );
-
 
 
 

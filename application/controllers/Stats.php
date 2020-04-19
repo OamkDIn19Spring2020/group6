@@ -17,23 +17,40 @@ class Stats extends CI_Controller
         $this->load->view('stats/menu/content_view', $data);
     }
 
-    public function validation()
-    {
-        $this->form_validation->set_rules('user_weight', 'Weight', 'required|trim');
-        $this->form_validation->set_rules('user_height', 'Height', 'required|trim');
-        $this->form_validation->set_rules('user_age', 'Age', 'required|trim');
-        if ($this->form_validation->run()) {
-            $plain_password = $this->input->post('reg_password');
-            $hashed_password = password_hash($plain_password, PASSWORD_DEFAULT);
+    public function submit() {
+            $name = $_SESSION['username'];
+            $query = $this->db->get_where('user_stats', array('name' => $name));
+            $num = $query->num_rows();      
             $data = array(
+                'name' => $name,
                 'weight' => $this->input->post('user_weight'),
                 'height' => $this->input->post('user_height'),
                 'age' => $this->input->post('user_age'),
+                'gender' => $this->input->post('gender'),
+                'DateTime' => date('Y-m-d')
             );
             $id = $this->stats_model->insert($data);
-
+            $data['page'] = 'stats/stats_view';
+            $this->load->view('stats/menu/content_view', $data);
         }
+
+
+    public function view_progress() {
+        $query = $this->db->query("SELECT weight as count FROM user_stats 
+            "); 
+        $data['weight'] = json_encode(array_column($query->result(), 'count'),JSON_NUMERIC_CHECK);
+   
+        $query = $this->db->query("SELECT DateTime as count FROM user_stats
+           "); 
+        $data['dateTime'] = json_encode(array_column($query->result(), 'count'),JSON_NUMERIC_CHECK);
+        $this->load->view('stats/progress',$data);
     }
+
+    public function nutrition_info() {
+        $result['data']=$this->stats_model->get_specific_data();
+        $this->load->view('stats/nutrition_info',$result);
+    }
+
 }
 
 /* End of file Stats.php */
