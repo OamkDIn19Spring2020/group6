@@ -50,7 +50,7 @@ class Stats_model extends CI_Model
         $name = $_SESSION['username'];
         $this->db->from("user_stats");
         $this->db->where('name', $name);
-        $this->db->order_by('DateTime', 'DESC');
+        $this->db->order_by('stats_id','DESC');
         $this->db->limit(1);
         $query = $this->db->get();  
         return $query->result();
