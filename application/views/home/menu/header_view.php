@@ -9,9 +9,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <title>Pulse UP</title>
     <link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?=base_url()?>assets/css/home.css">
     <script src="<?=base_url()?>assets/js/jquery.js"></script>
     <script src="<?=base_url()?>assets/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/home.css">
 </head>
 
 <body>

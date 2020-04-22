@@ -26,7 +26,18 @@ body {
     max-width: 780px;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+  }
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
 .login {
+    margin-top: 65px;
     width: 320px;
     height: 330px;
     border-radius: 4px;
@@ -49,7 +60,7 @@ input {
     border: 1px solid rgba(247, 238, 238, 0.72);
     color: white;
     font-family: "Play";
-}
+}   
 
 .registration {
     color: #ffffff;
@@ -91,6 +102,11 @@ input {
     border: none;
     background-color: #ff5500;
 }
+
+.bottom-text p {
+    font-size: 6rem;
+}
+
 
 .footer {
     position: fixed;

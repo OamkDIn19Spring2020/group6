@@ -1,4 +1,4 @@
-<div class="row no-gutters">
+    <div class="row no-gutters">
     <div class="no-gutters" style="width: 20%; flex: 0 0 20%;max-width: 20%;"></div>
     <div class="col-lg-5 no-gutters">
         <div id="logo" class="text-center ml-5 mt-2"><img src="assets/img/logo_img/PULSEUP.png"></div>
@@ -30,10 +30,10 @@
                 </a>
             </div>
         </div>
-        <div>
+        <div class='bottom-text'>
             <p style="line-height:90px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"
-                class="display-1 mt-2">JOIN US!<br>
-                <span style="color: orangered;" class="ml-5">IMPROVE YOURSLEF!</span></p>
+                class="mt-2">JOIN US!<br>
+                <span style="color: orangered;" class="ml-4">IMPROVE YOURSLEF!</span></p>
         </div>
     </div>
     <div class="col-md-3 no-gutters ml-5 mt-5">
