@@ -36,12 +36,10 @@ class Stats extends CI_Controller
 
 
     public function view_progress() {
-        $query = $this->db->query("SELECT weight as count FROM user_stats 
-            "); 
+        $name = $_SESSION['username'];
+        $query = $this->db->query("SELECT weight as count FROM user_stats WHERE NAME = '$name' "); 
         $data['weight'] = json_encode(array_column($query->result(), 'count'),JSON_NUMERIC_CHECK);
-   
-        $query = $this->db->query("SELECT DateTime as count FROM user_stats
-           "); 
+        $query = $this->db->query("SELECT DateTime as count FROM user_stats WHERE NAME = '$name' "); 
         $data['dateTime'] = json_encode(array_column($query->result(), 'count'),JSON_NUMERIC_CHECK);
         $this->load->view('stats/progress',$data);
     }
@@ -49,6 +47,12 @@ class Stats extends CI_Controller
     public function nutrition_info() {
         $result['data']=$this->stats_model->get_specific_data();
         $this->load->view('stats/nutrition_info',$result);
+    }
+
+    public function clear_data() {
+        $id = $this->stats_model->clear_data();
+        $name = $_SESSION['username'];
+        $this->load->view('stats/progress');
     }
 
 }

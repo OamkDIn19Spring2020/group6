@@ -6,7 +6,7 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?=base_url()?>assets/css/progress.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/track_progress.css">
 </head>
 <body>
   
@@ -60,12 +60,12 @@ $(function () {
                 <div class="panel-heading"></div>
                 <div class="panel-body">
                     <div id="container"></div>
-                    <button>CLEAR ALL DATA</button>
+                    <button onclick="window.location='<?php echo site_url("stats/clear_data");?>'" >CLEAR ALL DATA</button>
                 </div>
             </div>
         </div>
     </div>
-    <a href="<?=site_url('stats')?>">Back</a>
+    <button class="back-button" onclick="window.location='<?php echo site_url("stats/index");?>'">← Back</button>
 </div>
 
 </body>

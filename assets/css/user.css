@@ -26,6 +26,15 @@ input {
     font-family: "Play";
 }
 
+a {
+    color: white;
+    text-decoration: none;
+  }
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
 .userDetails {
     width: 320px;
     height: 620px;

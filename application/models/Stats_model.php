@@ -56,6 +56,12 @@ class Stats_model extends CI_Model
         return $query->result();
     }
 
+    public function clear_data() {
+        $name = $_SESSION['username'];
+        $this->db->where('name', $name);
+        $this->db->delete('user_stats');
+    }
+
 
 }
 
