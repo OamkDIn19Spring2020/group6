@@ -32,7 +32,7 @@ class Stats extends CI_Controller
             $id = $this->stats_model->insert($data);
             $data['page'] = 'stats/stats_view';
             $this->load->view('stats/menu/content_view', $data);
-        }
+        } 
 
 
     public function view_progress() {
@@ -41,13 +41,29 @@ class Stats extends CI_Controller
         $data['weight'] = json_encode(array_column($query->result(), 'count'),JSON_NUMERIC_CHECK);
         $query = $this->db->query("SELECT DateTime as count FROM user_stats WHERE NAME = '$name' "); 
         $data['dateTime'] = json_encode(array_column($query->result(), 'count'),JSON_NUMERIC_CHECK);
-        $this->load->view('stats/progress',$data);
+        if ($query->num_rows() > 0) {
+            $this->load->view('stats/progress',$data);
+        } else {
+            $this->load->view('stats/error',$data);
+        }
+
     }
 
     public function nutrition_info() {
         $result['data']=$this->stats_model->get_specific_data();
+        $value = json_decode(json_encode($result['data']), true);
+        if (empty($value)) {
+            $this->load->view('stats/error');
+        } else {
+        if (($value[0]['weight']) != 0 && $value[0]['height'] != 0 && $value[0]['gender'] ) {
         $this->load->view('stats/nutrition_info',$result);
+        } else {
+            $this->load->view('stats/error');
+        }
     }
+    }
+
+
 
     public function clear_data() {
         $id = $this->stats_model->clear_data();
