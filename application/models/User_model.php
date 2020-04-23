@@ -92,6 +92,11 @@ class User_model extends CI_Model
         $this->db->update('user_database', $update_data);
         return $this->db->affected_rows();
     }
+    public function delete_user($user_id){
+        $this->db->where('user_id', $user_id);
+        $this->db->delete('user_database');
+        return $this->db->affected_rows();
+    }
 
 }
 

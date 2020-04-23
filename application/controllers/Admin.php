@@ -57,14 +57,42 @@ class Admin extends CI_Controller
             $data['message'] = 'You can not update this user';
             $data['return_url'] = 'customers';
             $data['page'] = 'admin/feedback_modal';
-            $this->load->view('admin/menu/content', $data);
+            $this->load->view('admin/menu/content_view', $data);
         } else {
             // redirect('book/show_books');
             $data['message'] = 'User details updated successfully';
             $data['return_url'] = 'customers';
             $data['page'] = 'admin/feedback_modal';
-            $this->load->view('admin/menu/content', $data);
+            $this->load->view('admin/menu/content_view', $data);
         }
+    }
+
+    function add_user(){
+        
+        $insert_data = array(
+            'username' => $this->input->post('username'),
+            'email' => $this->input->post('email')
+        );
+        $this->User_model->insert($insert_data);
+        // echo 'Data Inserted';
+
+    
+    }
+    function delete_user(){
+    $user_id=$this->input->post('user_id');
+    $test=$this->User_model->delete_user($user_id);
+    if($test==0){
+        $data['message']='You can not delete this user';
+        $data['return_url']='customers';
+        $data['page']='admin/feedback_modal';
+        $this->load->view('admin/menu/content_view',$data);
+    }
+    else{
+        $data['message']='User deleted succesfully';
+        $data['return_url']='customers';
+        $data['page']='admin/feedback_modal';
+        $this->load->view('admin/menu/content_view',$data);
+    }
     }
 
     // ------------------------------------------------------------------------
