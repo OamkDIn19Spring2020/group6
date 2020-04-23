@@ -5,8 +5,7 @@ body {
 	font-size: 18px;
 }
 
-.leftside,
-.rightside {
+.leftside, .rightside {
 	height: 50vh;
 	width: 100%;
 }
@@ -15,16 +14,6 @@ body {
 	.leftside {
 		height: 100vh;
 	}
-}
-
-a {
-    color: white;
-    text-decoration: none;
-  }
-
-a:hover {
-    color: white;
-    text-decoration: none;
 }
 
 input {
@@ -123,8 +112,7 @@ table {
 	width: 100%;
 }
 
-.table td,
-.table th {
+.table td, .table th {
 	padding: 8px;
 	vertical-align: top;
 	border-top: 1px solid #ff5500;
@@ -133,8 +121,7 @@ table {
 	text-align: center;
 }
 
-.table tbody,
-.table td {
+.table tbody, .table td {
 	text-align: center;
 	height: 5vh;
 	width: 10rem;
@@ -157,12 +144,12 @@ table {
 	color: #ff5500;
 }
 
-.modal {
+.editModal {
 	display: none;
 	/* Hidden by default */
 	position: fixed;
 	/* Stay in place */
-	z-index: 1;
+	/* z-index: 1; */
 	/* Sit on top */
 	padding-top: 200px;
 	/* Location of the box */
@@ -182,7 +169,7 @@ table {
 
 /* Modal Content */
 
-.modal-content {
+.modalcontent {
 	text-align: center;
 	background-color: #fefefe;
 	color: black;
@@ -198,15 +185,14 @@ table {
 
 /* The Close Button */
 
-.close {
+.closeBtn {
 	color: #aaaaaa;
 	float: right;
 	font-size: 28px;
 	font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.closeBtn:hover, .closeBtn:focus {
 	color: #000;
 	text-decoration: none;
 	cursor: pointer;

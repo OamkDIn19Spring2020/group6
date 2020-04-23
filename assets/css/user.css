@@ -29,12 +29,13 @@ input {
 a {
     color: white;
     text-decoration: none;
-  }
+}
 
 a:hover {
     color: white;
     text-decoration: none;
 }
+
 .userDetails {
     width: 320px;
     height: 620px;
@@ -204,4 +205,18 @@ td {
     font-weight: 700;
     border: 1px solid white;
     background-color: #ff5500;
+}
+
+/* Product_view page */
+
+.card-header {
+    background-color: #ff5500;
+}
+
+.card-title {
+    color: #007bff;
+}
+
+.list-unstyled {
+    color: #6c758d
 }

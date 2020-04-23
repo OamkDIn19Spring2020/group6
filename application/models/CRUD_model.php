@@ -55,6 +55,17 @@ class CRUD_model extends CI_Model
 
     // ------------------------------------------------------------------------
 
+    // Used in Purchase_history controller
+    public function get_purchase_data()
+    {
+        $name = $_SESSION['username'];
+        $this->db->from($this->_table);
+        $this->db->where('username', $name);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    // ------------------------------------------------------------------------
+
     /**
      *
      * @param array $data
