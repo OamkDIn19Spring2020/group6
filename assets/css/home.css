@@ -29,7 +29,7 @@ body {
 a {
     color: white;
     text-decoration: none;
-  }
+}
 
 a:hover {
     color: white;
@@ -60,22 +60,77 @@ input {
     border: 1px solid rgba(247, 238, 238, 0.72);
     color: white;
     font-family: "Play";
-}   
+}
 
-.registration {
+/* CSS for registration form starts here */
+
+.registration-container {
     color: #ffffff;
-    margin-top: 15px;
-    width: 320px;
-    height: 420px;
+    margin-top: 30px;
+    padding-top: 20px;
+    width: 480px;
     border-radius: 4px;
-    background-color: #1f1f1f;
+    background-color: #2c2c2c;
     border: 1px solid #383838;
 }
 
-.registration p {
-    margin-top: 4px;
-    padding-left: 25px;
+.line {
+    border: 1px solid #ff5500
 }
+
+.date-of-birth {
+    font-size: 14px;
+}
+
+#back-btn {
+    color: #ff5500;
+    font-family: "Play";
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    justify-content: center;
+    width: 200px;
+    height: 36px;
+    line-height: 1.2;
+    border-radius: 4px;
+    border: 2px solid #ff5500;
+    background-color: white;
+}
+
+#back-btn:hover {
+    color: white;
+    border: 2px solid white;
+    background-color: #ff5500;
+}
+
+#register-button-regpage {
+    color: #ffffff;
+    font-family: "Play";
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    justify-content: center;
+    width: 200px;
+    height: 36px;
+    border-radius: 4px;
+    border: none;
+    background-color: #ff5500;
+}
+
+#register-button-homepage {
+    color: #ffffff;
+    font-family: "Play";
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    width: 270px;
+    height: 36px;
+    border-radius: 4px;
+    border: none;
+    background-color: #ff5500;
+}
+
+/* CSS for registration form ENDS here ---------*/
 
 #login-button {
     color: #ffffff;
@@ -106,7 +161,6 @@ input {
 .bottom-text p {
     font-size: 6rem;
 }
-
 
 .footer {
     position: fixed;
