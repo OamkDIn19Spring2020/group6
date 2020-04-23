@@ -27,7 +27,7 @@ if ($this->session->flashdata('message')) {
             <div class="form-group">
                 <input type="password" name="reg_password" class="form-control"
                     value="<?php echo set_value('reg_password') ?>" placeholder="Enter Password">
-                <span class="text-danger"><?php echo form_error('reg_password') ?></span>
+                <!-- <span class="text-danger"><?php echo form_error('reg_password') ?></span> -->
             </div>
             <div class="form-group">
                 <input type="password" name="confirm_password" class="form-control"
@@ -39,25 +39,27 @@ if ($this->session->flashdata('message')) {
             <div class="form-row">
                 <div class="col-md-6 mb-3">
                     <input type="text" class="form-control" name="firstname"
-                        value="<?php echo set_value('firstname') ?>" placeholder="First Name">
+                        value="<?php echo set_value('firstname') ?>" placeholder="First Name (optional)">
                 </div>
                 <div class="col-md-6 mb-3">
                     <input type="text" class="form-control" name="lastname" value="<?php echo set_value('lastname') ?>"
-                        placeholder="Last Name">
+                        placeholder="Last Name (optional)">
                 </div>
             </div>
             <div class="form-row">
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <input type="text" class="form-control" name="reg_email"
                         value="<?php echo set_value('reg_email') ?>" placeholder="Enter Email">
                     <span class="text-danger"><?php echo form_error('reg_email') ?></span>
                 </div>
-                <div class="col-md-3">
-                    <label for="birthyear" class="date-of-birth">Year of Birth:</label>
+                <div class="col-md-2">
+                    <label for="birthyear" class="date-of-birth">Enter Age:</label>
                 </div>
                 <div class="col-md-4">
                     <input type="text" class="form-control" name="birthyear"
-                        value="<?php echo set_value('birthyear') ?>" placeholder="YYYY">
+                        value="<?php echo set_value('birthyear') ?>">
+                    <span class="text-danger"><?php echo form_error('birthyear') ?></span>
+
                 </div>
             </div>
             <div class="form-row mt-3">

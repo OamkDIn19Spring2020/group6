@@ -41,7 +41,7 @@ class User extends CI_Controller
         $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|trim|matches[reg_password]');
         $this->form_validation->set_rules('firstname', 'First Name', 'required');
         $this->form_validation->set_rules('lastname', 'Last Name', 'required');
-        $this->form_validation->set_rules('birthyear', 'Year of Birth', 'integer|exact_length[4]');
+        $this->form_validation->set_rules('birthyear', 'Age', 'integer|exact_length[2]');
 
         if ($this->form_validation->run() == false) {
             $data['page'] = 'home/register_view';
