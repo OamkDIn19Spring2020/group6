@@ -29,12 +29,13 @@ input {
 a {
     color: white;
     text-decoration: none;
-  }
+}
 
 a:hover {
     color: white;
     text-decoration: none;
 }
+
 .userDetails {
     width: 320px;
     height: 620px;
@@ -149,7 +150,7 @@ td {
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
-    z-index: 1;
+    /* z-index: 1; */
     /* Sit on top */
     padding-top: 200px;
     /* Location of the box */
@@ -204,4 +205,18 @@ td {
     font-weight: 700;
     border: 1px solid white;
     background-color: #ff5500;
+}
+
+/* Product_view page */
+
+.card-header {
+    background-color: #ff5500;
+}
+
+.card-title {
+    color: #007bff;
+}
+
+.list-unstyled {
+    color: #6c758d
 }

@@ -101,8 +101,8 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
                         <div><a href="<?=site_url('user')?>">Calendar</a></div>
                         <div>Manage Account</div>
                         <div><a href="<?=site_url('stats')?>">Stats</a></div>
-                        <div>Products</div>
-                        <div>Purchase History</div>
+                        <div><a href="<?=site_url('products')?>">Products</a></div>
+                        <div><a href="<?=site_url('purchase_history')?>">Purchase history</a></div>
                         <span class="mt-3"><a id="logout-button" href="<?=site_url('user/logout')?>"><img
                                     src="<?=base_url()?>assets/img/user_img/logout.png"></a></span>
                     </div>
