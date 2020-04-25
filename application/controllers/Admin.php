@@ -8,14 +8,17 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         $this->load->model('User_model');
+        $this->load->model('Purchase_model');
+        $this->load->model('Program_model');
     }
 
     // ------------------------------------------------------------------------
 
     public function index()
     {
-        //
-        $data['page'] = 'admin/dashboard_view';
+        // This links to the customers/main page in admin dashboard
+        $data['customers'] = $this->User_model->get_users();
+        $data['page'] = 'admin/customers_view';
         $this->load->view('admin/menu/content_view', $data);
     }
 
@@ -31,18 +34,59 @@ class Admin extends CI_Controller
     }
 
     // ------------------------------------------------------------------------
-
-    // This links to the products page in admin dashboard
-    public function products()
+    public function orders()
     {
-        // TODO
-        // $data['products'] = $this->User_model->get_products();
-        // print_r($data);
-        $data['page'] = 'admin/products_view';
+        $data['products'] = $this->Purchase_model->get();
+        $data['page'] = 'admin/orders_view';
         $this->load->view('admin/menu/content_view', $data);
     }
 
     // ------------------------------------------------------------------------
+
+    // This links to the programs page in admin dashboard
+    public function programs()
+    {
+
+        $data['page'] = 'admin/programs_view';
+        $this->load->view('admin/menu/content_view', $data);
+    }
+
+    // ------------------------------------------------------------------------
+
+    // Used on Programs_view page
+    public function insert_program()
+    {
+        $data = array(
+            'week_number' => $this->input->post('wnum'),
+            'day_number' => $this->input->post('day'),
+            'program_name' => $this->input->post('program'),
+            'program_plan' => $this->input->post('workout'),
+        );
+        $result = $this->Program_model->insert($data);
+        $data = $this->Program_model->get($result);
+        // echo '<pre>';
+        // print_r($data[0]['program_id']);
+        // $this->output->enable_profiler(true);
+
+        $program = $data[0]['program_plan'];
+        // echo '<pre>';
+        // print_r($program_id);
+        // $this->output->enable_profiler(true);
+
+        if ($result > 0) {
+            $data['message'] = $program;
+            $data['return_url'] = 'programs';
+            $data['page'] = 'admin/example_program_view';
+            $this->load->view('admin/menu/content_view', $data);
+        }
+
+        // $data['page'] = 'admin/programs_view';
+        // $this->load->view('admin/menu/content_view', $data);
+    }
+
+    // ------------------------------------------------------------------------
+
+    // Used on Customers_view page
     public function edit_user()
     {
         $user_id = $this->input->post('user_id');
@@ -57,13 +101,12 @@ class Admin extends CI_Controller
             $data['message'] = 'You can not update this user';
             $data['return_url'] = 'customers';
             $data['page'] = 'admin/feedback_modal';
-            $this->load->view('admin/menu/content', $data);
+            $this->load->view('admin/menu/content_view', $data);
         } else {
-            // redirect('book/show_books');
             $data['message'] = 'User details updated successfully';
             $data['return_url'] = 'customers';
             $data['page'] = 'admin/feedback_modal';
-            $this->load->view('admin/menu/content', $data);
+            $this->load->view('admin/menu/content_view', $data);
         }
     }
 

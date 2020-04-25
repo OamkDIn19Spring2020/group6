@@ -16,6 +16,76 @@ body {
 	}
 }
 
+/* CSS Sidebar in header_view STARTS HERE */
+
+/* Style the sidebar - fixed full height */
+
+.sidebar {
+	height: 100%;
+	width: 160px;
+	position: fixed;
+	z-index: 1;
+	top: 50px;
+	left: 0;
+	background-color: #181818;
+	border-right-style: solid;
+	overflow-x: hidden;
+	padding-top: 16px;
+}
+
+/* Style sidebar links */
+
+.sidebar a {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #f1f1f1;
+	display: block;
+}
+
+/* Style links on mouse-over */
+
+.sidebar a:hover {
+	color: #ff5500;
+}
+
+/* Style the main content */
+
+.main {
+	margin-left: 160px;
+	/* Same as the width of the sidenav */
+	padding: 0px 10px;
+}
+
+/* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+
+@media screen and (max-height: 450px) {
+	.sidebar {
+		padding-top: 15px;
+	}
+	.sidebar a {
+		font-size: 18px;
+	}
+}
+
+/* CSS for ADD button in Customers Screen */
+
+.signoutBtn:hover {
+	color: white;
+}
+
+.btn-outline-add {
+	color: #ff5500;
+	border-color: #ff5500;
+}
+
+.btn-outline-add:hover {
+	color: white;
+	background-color: #ff5500;
+}
+
+/* CSS Sidebar in header_view ENDS HERE */
+
 input {
 	width: 268px;
 	height: 36px;
@@ -221,3 +291,100 @@ table {
 	border: 1px solid white;
 	background-color: #dc3545;
 }
+
+/* CSS for programs_view STARTS HERE */
+
+/* Style inputs, select elements and textareas */
+
+input[type=text], select, textarea {
+	width: 100%;
+	padding: 12px;
+	box-sizing: border-box;
+	resize: vertical;
+	border-radius: 4px;
+	background-color: #1f1f1f;
+	border: 1px solid #ff5500;
+	color: white;
+	font-family: "Play";
+}
+
+/* Style the label to display next to the inputs */
+
+label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
+}
+
+/* Style the submit button */
+
+input[type=submit] {
+	color: #ff5500;
+	font-family: "Play";
+	font-weight: 700;
+	font-size: 18px;
+	text-align: center;
+	margin: auto;
+	/* justify-content: center; */
+	width: 200px;
+	height: 36px;
+	line-height: 1.2;
+	border-radius: 4px;
+	border: 2px solid #ff5500;
+	background-color: white;
+}
+
+input[type=submit]:hover {
+	color: white;
+	border: 2px solid white;
+	background-color: #ff5500;
+}
+
+/* Style the container */
+
+.orders-container {
+	color: #ffffff;
+	margin-top: 30px;
+	padding: 20px;
+	border-radius: 4px;
+	background-color: #2c2c2c;
+	border: 1px solid #383838;
+}
+
+.line {
+	border: 1px solid #ff5500
+}
+
+/* Floating column for labels: 25% width */
+
+.col-25 {
+	float: left;
+	width: 15%;
+	margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+
+.col-75 {
+	float: left;
+	width: 75%;
+	margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 600px) {
+	.col-25, .col-75, input[type=submit] {
+		width: 100%;
+		margin-top: 0;
+	}
+}
+
+/* CSS for programs_view ENDS HERE */

@@ -55,6 +55,28 @@ class CRUD_model extends CI_Model
 
     // ------------------------------------------------------------------------
 
+    // Used in Admin Controller admin/insert_program
+    public function get_program_id($data)
+    {
+        $this->db->select($this->$_primary_key);
+        $this->db->from($this->_table);
+        $this->db->where($this->$_primary_key, $data);
+        return $this->db->get()->row($this->$_primary_key);
+    }
+
+    // ------------------------------------------------------------------------
+
+    // Used in Purchase_history controller
+    public function get_username($given_username)
+    {
+        $this->db->select('username');
+        $this->db->from('user_database');
+        $this->db->where('username', $given_username);
+        return $this->db->get()->row('password');
+    }
+
+    // ------------------------------------------------------------------------
+
     // Used in Purchase_history controller
     public function get_purchase_data()
     {
