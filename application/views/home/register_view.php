@@ -39,11 +39,11 @@ if ($this->session->flashdata('message')) {
             <div class="form-row">
                 <div class="col-md-6 mb-3">
                     <input type="text" class="form-control" name="firstname"
-                        value="<?php echo set_value('firstname') ?>" placeholder="First Name (optional)">
+                        value="<?php echo set_value('firstname') ?>" placeholder="First Name">
                 </div>
                 <div class="col-md-6 mb-3">
                     <input type="text" class="form-control" name="lastname" value="<?php echo set_value('lastname') ?>"
-                        placeholder="Last Name (optional)">
+                        placeholder="Last Name">
                 </div>
             </div>
             <div class="form-row">
