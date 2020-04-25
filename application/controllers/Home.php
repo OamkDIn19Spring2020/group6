@@ -8,7 +8,7 @@ class Home extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
-        $this->load->model('user_model');
+        $this->load->model('User_model');
 
     }
 
@@ -39,11 +39,11 @@ class Home extends CI_Controller
         $given_password = $this->input->post('password');
 
         // Hardcoded to use admin username and pass -> 1=user_id in database
-        $admin_data = $this->user_model->get(1);
+        $admin_data = $this->User_model->get(1);
         $admin_username = $admin_data[0]['username'];
         $admin_password = $admin_data[0]['password'];
 
-        $db_password = $this->user_model->get_password($given_username);
+        $db_password = $this->User_model->get_password($given_username);
         if (password_verify($given_password, $db_password)) {
             $_SESSION['logged_in'] = true;
             $_SESSION['username'] = $given_username;

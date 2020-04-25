@@ -1,6 +1,6 @@
 <div class="row no-gutters">
     <div class="no-gutters" style="width: 20%; flex: 0 0 20%;max-width: 20%;"></div>
-    <div class="col-md-5 no-gutters">
+    <div class="col-md-6 no-gutters">
         <div id="logo" class="text-center ml-5 mt-2"><img src="<?=base_url()?>assets/img/logo_img/PULSEUP.png"></div>
         <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
             <h1 class="display-4">Purchase History</h1>

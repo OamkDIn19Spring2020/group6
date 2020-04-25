@@ -142,6 +142,11 @@ input {
 	margin-left: 25px;
 }
 
+.navigation div a {
+	color: white;
+	text-decoration: none;
+}
+
 .navigation div:hover {
 	border-radius: 4px;
 	background-color: #404040;

@@ -7,14 +7,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |--------------------------------------------------------------------------
  */
 
-function __autoload($class)
-{
-    $class = strtolower($class);
+// function __autoload($class)
+// {
+//     $class = strtolower($class);
 
-    if ($class == 'crud_model') {
-        require APPPATH . 'models/' . $class . '.php';
-    }
-}
+//     if ($class == 'crud_model') {
+//         require APPPATH . 'models/' . $class . '.php';
+//     }
+// }
 
 /*
 |--------------------------------------------------------------------------

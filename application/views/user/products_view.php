@@ -1,6 +1,6 @@
 <div class="row no-gutters">
     <div class="no-gutters" style="width: 20%; flex: 0 0 20%;max-width: 20%;"></div>
-    <div class="col-md-5 no-gutters">
+    <div class="col-md-6 no-gutters">
         <?php
 if ($this->session->flashdata('message')) {
     echo '

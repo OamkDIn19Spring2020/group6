@@ -1,6 +1,6 @@
 <div class="row no-gutters">
     <div class="no-gutters" style="width: 20%; flex: 0 0 20%;max-width: 20%;"></div>
-    <div class="col-md-5 no-gutters text-center ">
+    <div class="col-md-6 no-gutters text-center ">
         <div id="logo" class="text-center ml-5 mt-2"><img src="<?=base_url()?>assets/img/logo_img/PULSEUP.png"></div>
         <div class="stats-main">
             <div id="stats-form">
@@ -31,7 +31,7 @@
         </div>
 
     </div>
-    <div class="col-md-3 no-gutters ml-4 mt-5 ">
+    <div class="col-md-3 no-gutters mt-5">
         <div id="sideBar" style="margin-left: 60px;">
             <div id="sideBar">
                 <div class="userDetails">
@@ -62,5 +62,4 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
             </div>
         </div>
     </div>
-    <div class="col-md-2 no-gutters ml-5 mt-5"></div>
 </div>
