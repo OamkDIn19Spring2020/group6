@@ -42,4 +42,26 @@ CREATE TABLE purchase_database(
     product_price VARCHAR(30)
 ) Engine=InnoDB;
 
+CREATE TABLE program_database(
+    program_id INT primary key auto_increment,
+    product_id INT,
+    user_id INT,
+    week_number INT,
+    day_number INT,
+    title VARCHAR(255),
+    workout_one VARCHAR(255),
+    sets_one VARCHAR(255),
+    workout_two VARCHAR(255),
+    sets_two VARCHAR(255),
+    workout_three VARCHAR(255),
+    workout_four VARCHAR(255),
+    workout_five VARCHAR(255)
+) Engine=InnoDB;
+
+INSERT INTO program_database (week_number, day_number, title, workout_one, sets_one, workout_two, workout_three, sets_two, workout_four, workout_five) VALUES('1', '1', 'Chest/Tris', 'Dumbbell_Chest_Press', '3-4_sets_8-10_reps', 'Incline_Dumbbell_Fly', 'Decline_Push-Up', '3-4_sets_10-15_reps', 'Single_Arm_Kickback', 'Dips_on_Bench' );
+INSERT INTO program_database (week_number, day_number, title, workout_one, sets_one, workout_two, workout_three, sets_two, workout_four, workout_five) VALUES('1', '2', 'Legs', 'Sumo_Squat', '3-4_sets_8-10_reps', 'Alternating_Lunges', 'Bulgarian_Squats', '3-4_sets_10-15_reps', 'Step-Up_to_Reverse_Lunge', 'Calf_Raises' );
+INSERT INTO program_database (week_number, day_number, title, workout_one, sets_one, workout_two, workout_three, sets_two, workout_four, workout_five) VALUES('1', '3', 'Back/Bis', 'Deadlift', '3-4_sets_8-10_reps', 'Pull-Up', 'One_Arm_Rows', '3-4_sets_10-15_reps', 'Chin-Up', 'Hammer-Curls' );
+INSERT INTO program_database (week_number, day_number, title, workout_one, sets_one, workout_two, workout_three, sets_two, workout_four, workout_five) VALUES('1', '4', 'Shoulders', 'Shoulder_Press', '3-4_sets_8-10_reps', 'Lateral_Raises', 'Upright_Rows', '3-4_sets_10-15_reps', 'Rear_Delt_Raise', 'Standing_Dumbbell_Shrug' );
+INSERT INTO program_database (week_number, day_number, title, workout_one, sets_one, workout_two, workout_three, sets_two, workout_four, workout_five) VALUES('1', '5', 'Total_Body', 'Pull-Up', '3-4_sets_8-10_reps', 'Push-Up', 'Squat', '3-4_sets_10-15_reps', 'Crunch', 'Russian_Twist' );
+
 
