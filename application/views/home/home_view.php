@@ -1,5 +1,5 @@
     <div class="row no-gutters">
-        <div class="no-gutters" style="width: 20%; flex: 0 0 20%;max-width: 20%;"></div>
+        <div class="no-gutters" style="width: 25%; flex: 0 0 25%;max-width: 25%;"></div>
         <div class="col-lg-5 no-gutters">
             <div id="logo" class="text-center ml-5 mt-2"><img src="assets/img/logo_img/PULSEUP.png"></div>
             <div class="slideshow ">
@@ -71,5 +71,4 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-2 no-gutters ml-5 mt-5"></div>
     </div>

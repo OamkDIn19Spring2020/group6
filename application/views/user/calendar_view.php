@@ -1,6 +1,6 @@
 <div class="row no-gutters">
     <div class="no-gutters" style="width: 20%; flex: 0 0 20%;max-width: 20%;"></div>
-    <div class="col-md-5 no-gutters">
+    <div class="col-md-6 no-gutters">
         <div id="logo" class="text-center ml-5 mt-2"><img src="<?=base_url()?>assets/img/logo_img/PULSEUP.png"></div>
         <div class="table-responsive">
             <table class="table">
@@ -93,8 +93,14 @@ $(document).on("click", '#myBtn', function(e) {
     var workout_five = $(this).attr('data-workout_five');
     var sets_one = $(this).attr('data-sets_one');
     var sets_two = $(this).attr('data-sets_two');
-
-
+    title = title.replace(/_/g, ' ');
+    workout_one = workout_one.replace(/_/g, ' ');
+    workout_two = workout_two.replace(/_/g, ' ');
+    workout_three = workout_three.replace(/_/g, ' ');
+    workout_four = workout_four.replace(/_/g, ' ');
+    workout_five = workout_five.replace(/_/g, ' ');
+    sets_one = sets_one.replace(/_/g, ' ');
+    sets_two = sets_two.replace(/_/g, ' ');
 
     $("#program_id").val(program_id);
     $("#title").val(title);

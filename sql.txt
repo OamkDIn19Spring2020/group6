@@ -13,7 +13,7 @@ CREATE TABLE user_database(
     gender VARCHAR(255),
     birthyear SMALLINT,
     email VARCHAR(255),
-    password VARCHAR(255) 
+    password VARCHAR(255)
 ) Engine=InnoDB;
 
 
