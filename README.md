@@ -2,7 +2,7 @@
 
 > School project app created with PHP, Codeigniter and MySQL
 
-![logo](\assets\img\logo_img\readme.png)
+![logo](https://github.com/OamkDIn19Spring2020/group6/blob/develop/assets/img/logo_img/readme.png?raw=true)
 
 ## Table of contents
 
