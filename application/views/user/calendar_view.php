@@ -5,6 +5,29 @@
         <div class="table-responsive">
             <table class="table">
                 <tbody>
+                    <thead>
+                        <tr>
+                            <?php
+
+echo '<th class="workout">';
+if ($program[0]['product_id'] == 1) {
+    echo '<a href="#">Weight Training</a>';
+}
+echo '</th>';
+// echo '<th class="workout">';
+// if ($program[0]['product_id'] == 2) {
+//     echo '<a href="#">Cardio</a>';
+// }
+// echo '</th>';
+// echo '<th class="workout">';
+// if ($program[0]['product_id'] == 3) {
+//     echo '<a>MMA</a>';
+// }
+// echo '</th>';
+
+?>
+                        </tr>
+                    </thead>
 
                     <?php
 for ($i = 1; $i <= 4; $i++) {

@@ -44,7 +44,6 @@ class Admin extends CI_Controller
 
     // ------------------------------------------------------------------------
 
-    // This is used in calendar_view
     public function show_programs()
     {
         if ($_SESSION['program'] == 0) {
