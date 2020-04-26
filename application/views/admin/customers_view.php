@@ -1,6 +1,5 @@
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="<?=site_url('admin')?>">PulseUP</a>
-    <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
             <a class="nav-link" href="<?=site_url('user/logout')?>">Sign out</a>
@@ -39,7 +38,8 @@
                 <h1 class="h2">Admin Dashboard</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group mr-2">
-                        <button type="button" class="btn btn-sm btn-outline-add">Add User</button>
+                        <button type="button" class="btn btn-sm btn-outline-add" data-toggle="modal"
+                            data-target="#addModal">Add User</button>
                     </div>
 
                 </div>
@@ -74,6 +74,34 @@ foreach ($customers as $row) {
 ?>
                     </tbody>
                 </table>
+                <!-- addModal -->
+                <div class="modal fade" id="addModal" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content modalcontent">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Add a User</h5>
+                            </div>
+                            <div class="modal-body">
+                                <form class="" action="<?php echo site_url('admin/add_user'); ?>" method="post">
+                                    <div class="form-group">
+                                        <label for="add_username">User Name</label> <br>
+                                        <input type="text" class="input" id="add_username" name="username" value="">
+                                        <br>
+                                        <label for="add_password">Password</label> <br>
+                                        <input type="password" class="input" id="add_password" name="password" value="">
+                                        <br>
+                                        <label for="add_email">Email</label> <br>
+                                        <input type="email" class="input" id="add_email" name="email" value=""> <br>
+                                    </div>
+                                    <input type="submit" class="btn" name="" value="Add">
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- editModal -->
                 <div class="modal fade  editModal" id="editModal" role="dialog">
                     <div class="modal-dialog" role="document">
@@ -84,14 +112,15 @@ foreach ($customers as $row) {
                             <div class="modal-body">
                                 <form class="" action="<?php echo site_url('admin/edit_user'); ?>" method="post">
                                     <div class="form-group">
-                                        <input type="hidden" id="edit_user_id" name="user_id" value="">
-                                        <label for="edit_username">Username</label> <br>
-                                        <input type="text" id="edit_username" name="username" value=""> <br>
+                                        <input type="hidden" class="input" id="edit_user_id" name="user_id" value="">
+                                        <label for="edit_username">Edit Username</label> <br>
+                                        <input type="text" class="input" id="edit_username" name="username" value="">
+                                        <br>
 
-                                        <label for="edit_email">Email</label> <br>
-                                        <input type="text" id="edit_email" name="email" value=""> <br>
+                                        <label for="edit_email">Edit Email</label> <br>
+                                        <input type="text" class="input" id="edit_email" name="email" value=""> <br>
                                     </div>
-                                    <input type="submit" class="btn btn-primary" name="" value="Update">
+                                    <input type="submit" class="btn" name="" value="Update">
                                 </form>
                             </div>
                             <div class="modal-footer">
@@ -101,24 +130,17 @@ foreach ($customers as $row) {
                     </div>
                 </div>
                 <!-- deleteModal -->
-                <!-- TODO THIS IS TEMPLATE -->
                 <div class="modal fade" id="deleteModal" role="dialog">
                     <div class="modal-dialog" role="document">
-                        <div class="modal-content">
+                        <div class="modal-content modalcontent">
                             <div class="modal-header">
-                                <h5 class="modal-title">Delete a Book</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
+                                <h5 class="modal-title">Delete User</h5>
                             </div>
                             <div class="modal-body">
-                                <form class="" action=<?php echo site_url('admin/delete_book'); ?> method="post">
+                                <form class="" action=<?php echo site_url('admin/delete_user'); ?> method="post">
                                     <div class="form-group">
-                                        <input type="hidden" id="delete_user_id" id="user_id" value=""><br>
-                                        <label for="delete_username">Username</label><br>
-                                        <input type="text" id="delete_username" name="username" value="" disabled><br>
-                                        <label for="delete_email">Author</label><br>
-                                        <input type="text" id="delete_author" name="author" value="" disabled><br>
+                                        <input type="hidden" id="delete_user_id" name="user_id" value=""><br>
+                                        <h3>Are you sure you want to delete this User?</h3>
                                     </div>
                                     <input type="submit" class="btn btn-danger" name="" value="Delete">
                                 </form>
@@ -133,8 +155,16 @@ foreach ($customers as $row) {
         </main>
     </div>
 </div>
-</div>
 <script>
+$(document).on("click", '#addModal', function(e) {
+    console.log("Update modal open");
+    var username = $(this).data('username');
+    var email = $(this).data('email');
+    console.log('user_id = ' + user_id);
+
+    $("#add_username").val(username);
+    $("#add_email").val(email);
+});
 $(document).on("click", '#editBtn', function(e) {
     console.log("Update modal open");
     var user_id = $(this).data('user_id');
@@ -145,5 +175,16 @@ $(document).on("click", '#editBtn', function(e) {
     $("#edit_user_id").val(user_id);
     $("#edit_username").val(username);
     $("#edit_email").val(email);
+});
+$(document).on("click", '#deleteBtn', function(e) {
+    console.log("delete modal open");
+    var user_id = $(this).data('user_id');
+    var username = $(this).data('username');
+    var email = $(this).data('email');
+    console.log('user_id = ' + user_id);
+
+    $("#delete_user_id").val(user_id);
+    $("#delete_username").val(username);
+    $("#delete_email").val(email);
 });
 </script>

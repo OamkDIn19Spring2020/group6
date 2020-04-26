@@ -68,6 +68,39 @@ class Purchase_model extends CI_Model
 
     // ------------------------------------------------------------------------
 
+    /**
+     * @usage $this->User_model->delete(2);
+     *        $this->user_model->delete(array('name' => 'markus'))
+     */
+    public function delete_product($purchase_id)
+    {
+
+        if (is_numeric($purchase_id)) {
+            $this->db->where($this->_primary_key, $purchase_id);
+        } elseif (is_array($purchase_id)) {
+            foreach ($purchase_id as $_key => $_value) {
+                $this->db->where($_key, $_value);
+            }
+        } else {
+            die("You must pass a parameter to the DELETE() method.");
+        }
+        $this->db->delete($this->_table);
+        return $this->db->affected_rows();
+    }
+
+    // ------------------------------------------------------------------------
+
+    // function used my admin on customer page
+    public function update_product($product_id, $update_data)
+    {
+
+        $this->db->where('product_id', $product_id);
+        $this->db->update('purchase_database', $update_data);
+        return $this->db->affected_rows();
+    }
+
+    // ------------------------------------------------------------------------
+
 }
 
 /* End of file Purchase_model.php */

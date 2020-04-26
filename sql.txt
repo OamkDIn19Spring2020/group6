@@ -39,7 +39,8 @@ CREATE TABLE purchase_database(
     product_id INT,
     username VARCHAR(255),
     product_name VARCHAR(255),
-    product_price VARCHAR(30)
+    product_price VARCHAR(30),
+    date date
 ) Engine=InnoDB;
 
 CREATE TABLE program_database(
