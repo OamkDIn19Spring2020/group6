@@ -39,14 +39,10 @@ class Program_model extends CI_Model
     // ------------------------------------------------------------------------
 
     /**
-     *
      * @param array $data
-     *
      * @usage In User controller register function
      * $result = $this->user_model->insert(['username' => 'John']);
-     *
      */
-
     public function insert($data)
     {
         $this->db->insert($this->_table, $data);
