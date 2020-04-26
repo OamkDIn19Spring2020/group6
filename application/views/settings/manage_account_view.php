@@ -3,33 +3,19 @@
     <div class="col-md-6 no-gutters">
         <div id="logo" class="text-center ml-5 mt-2"><img src="<?=base_url()?>assets/img/logo_img/PULSEUP.png"></div>
         <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-            <h1 class="display-4">Purchase History</h1>
+            <h1 class="display-4">Manage Account</h1>
         </div>
-        <div class="table table-container">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Product Id</th>
-                        <th>Product Name</th>
-                        <th>Date Purchased</th>
-                        <th>Product Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-
-if (!null) {
-    foreach ($product as $row) {
-
-        echo '<tr>';
-        echo '<td>' . $row['product_id'] . '</td><td>' . $row['product_name'] . '</td><td>' . $row['date'] . '</td><td>€' . $row['product_price'] . '</td>';
-        echo '</tr>';
-    }
-}
-
-?>
-                </tbody>
-            </table>
+        <form action="<?php echo site_url('settings/submit'); ?>" method="post">
+        <div class='text-center'>GENDER: <input type="radio" name="gender" value="male" class='ml-4'>Male &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
+                            name="gender" value="female">Female<br>
+                            
+                            <label for="age">AGE:</label><input class="input-age" name="user_age"><br>
+                            <label for="age">EMAIL:</label><input class="input-email" name="user_email"><br>
+                            <button type="submit" name="submit" id="calculate-button" value="calculate">SAVE</button>
+                            </div>
+        </form>
+        <div class='text-center mt-5'>
+        <button class="mr-5 ml-5" onclick="window.location='<?php echo site_url("settings/change_password_view"); ?>'" >CHANGE PASSWORD</button>
         </div>
     </div>
     <div class="col-md-3 no-gutters ml-5 mt-5">
@@ -50,7 +36,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
                     </div>
                     <div class="navigation">
                         <div><a href="<?=site_url('user')?>">Calendar</a></div>
-                        <div><a href="<?=site_url('settings')?>">Manage Account</a></div>
+                        <div>Manage Account</div>
                         <div><a href="<?=site_url('stats')?>">Stats</a></div>
                         <div><a href="<?=site_url('products')?>">Products</a></div>
                         <div><a href="<?=site_url('purchase_history')?>">Purchase history</a></div>

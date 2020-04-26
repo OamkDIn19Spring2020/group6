@@ -19,14 +19,17 @@ class Stats extends CI_Controller
 
     public function submit() {
             $name = $_SESSION['username'];
-            $query = $this->db->get_where('user_stats', array('name' => $name));
-            $num = $query->num_rows();      
+            $this->db->where('username', $name);
+            $q = $this->db->get('user_database');
+            $data = $q->result_array();
+            $age = $data[0]['birthyear'];
+            $gender = $data[0]['gender'];
             $data = array(
                 'name' => $name,
                 'weight' => $this->input->post('user_weight'),
                 'height' => $this->input->post('user_height'),
-                'age' => $this->input->post('user_age'),
-                'gender' => $this->input->post('gender'),
+                'age' => $age,
+                'gender' => $gender,
                 'DateTime' => date('Y-m-d')
             );
             $id = $this->stats_model->insert($data);
