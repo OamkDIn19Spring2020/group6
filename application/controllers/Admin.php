@@ -44,22 +44,6 @@ class Admin extends CI_Controller
 
     // ------------------------------------------------------------------------
 
-    // This is used in calendar_view
-    public function show_programs()
-    {
-        if ($_SESSION['program'] == 0) {
-            $data['page'] = 'user/user_view';
-            $this->load->view('user/menu/content_view', $data);
-        } else {
-            $data["program"] = $this->Program_model->get();
-            $data['page'] = 'user/calendar_view';
-            $this->load->view('user/menu/content_view', $data);
-        }
-
-    }
-
-    // ------------------------------------------------------------------------
-
     // Used on Programs_view page
     public function insert_program()
     {
