@@ -60,8 +60,12 @@ class Settings extends CI_Controller
             $old1 = $data[0]['password'];
             if (password_verify($old2, $old1)) {
                 $id = $this->Settings_model->update_password($new);
+                $this->load->view('settings/password_changed');
             } else {
-                echo "error";
+                $message = "Wrong password";
+                echo "<script type='text/javascript'>alert('$message');</script>";
+                $data['page'] = 'settings/change_password';
+                $this->load->view('home/menu/content_view', $data);
             }
         }
     }
