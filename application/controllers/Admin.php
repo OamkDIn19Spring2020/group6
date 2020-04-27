@@ -47,9 +47,6 @@ class Admin extends CI_Controller
     public function workouts()
     {
         $data['workout'] = $this->Program_model->get(array('product_id' => '2'));
-        // echo '<pre>';
-        // print_r($data["workout"]);
-        // $this->output->enable_profiler(true);
         $data['page'] = 'admin/workouts_view';
         $this->load->view('admin/menu/content_view', $data);
     }
@@ -67,10 +64,6 @@ class Admin extends CI_Controller
             'sets_one' => $this->input->post('sets_one'),
         );
         $result = $this->Program_model->insert_update($data, $program_id);
-        // $data['workout'] = $this->Program_model->get(array('product_id' => '2'));
-        // echo '<pre>';
-        // print_r($result);
-        // $this->output->enable_profiler(true);
         if ($result == 0) {
             $data['message'] = 'You can not update this workout program';
             $data['return_url'] = 'index';
@@ -189,27 +182,6 @@ class Admin extends CI_Controller
     }
 
     // ------------------------------------------------------------------------
-
-    // Used on Orders_view page
-    public function delete_product()
-    {
-        $this->load->model('Purchase_model');
-        $purchase_id = $this->input->post('purchase_id');
-        $test = $this->Purchase_model->delete_product($purchase_id);
-        if ($test == 0) {
-            $data['message'] = 'You can not delete this users product';
-            $data['return_url'] = 'orders';
-            $data['page'] = 'admin/feedback_modal';
-            $this->load->view('admin/menu/content_view', $data);
-        } else {
-            $data['message'] = 'Product Deleted';
-            $data['return_url'] = 'orders';
-            $data['page'] = 'admin/feedback_modal';
-            $this->load->view('admin/menu/content_view', $data);
-        }
-    }
-
-    // ------------------------------------------------------------------------
     // Used on workouts_view page
     public function delete_workout()
     {
@@ -223,30 +195,6 @@ class Admin extends CI_Controller
         } else {
             $data['message'] = 'Workout Deleted';
             $data['return_url'] = 'workouts';
-            $data['page'] = 'admin/feedback_modal';
-            $this->load->view('admin/menu/content_view', $data);
-        }
-    }
-
-    // ------------------------------------------------------------------------
-
-    // Used on Orders_view page
-    public function edit_product()
-    {
-        $purchase_id = $this->input->post('purchase_id');
-        $data = array(
-            'product_name' => $this->input->post('product_name'),
-            'product_price' => $this->input->post('product_price'),
-        );
-        $test = $this->Purchase_model->update_product($purchase_id, $data);
-        if ($test == 0) {
-            $data['message'] = 'You can not update this product';
-            $data['return_url'] = 'orders';
-            $data['page'] = 'admin/feedback_modal';
-            $this->load->view('admin/menu/content_view', $data);
-        } else {
-            $data['message'] = 'Product updated successfully';
-            $data['return_url'] = 'orders';
             $data['page'] = 'admin/feedback_modal';
             $this->load->view('admin/menu/content_view', $data);
         }

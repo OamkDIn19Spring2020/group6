@@ -20,14 +20,12 @@ class User extends CI_Controller
         $this->load->model("Program_model");
         $this->load->model("Purchase_model");
         $data["product"] = $this->Purchase_model->get_purchase_data();
-        // echo '<pre>';
-        // print_r($data["product"]);
-        // $this->output->enable_profiler(true);
+
         if (empty($data["product"])) {
             $data['page'] = 'user/user_view';
             $this->load->view('user/menu/content_view', $data);
         } else {
-            $data["program"] = $this->Program_model->get(array('product_id' => '1'));
+            $data["program"] = $this->Program_model->get_product_one();
             $data['page'] = 'user/calendar_view';
             $this->load->view('user/menu/content_view', $data);
 

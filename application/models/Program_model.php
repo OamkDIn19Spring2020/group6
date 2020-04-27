@@ -38,6 +38,30 @@ class Program_model extends CI_Model
 
     // ------------------------------------------------------------------------
 
+    public function get_product_one($id = null, $order_by = null)
+    {
+
+        $query = $this->db->where(array('product_id' => '1'));
+
+        if ($query) {
+            if (is_numeric($id)) {
+                $this->db->where($this->_primary_key, $id);
+            }
+            if (is_array($id)) {
+                foreach ($id as $_key => $_value) {
+                    $this->db->where($_key, $_value);
+                }
+            }
+            // _table is referenced at beginning of the class
+            $query = $this->db->get($this->_table);
+            return $query->result_array();
+
+        }
+
+    }
+
+    // ------------------------------------------------------------------------
+
     /**
      * @param array $data
      * @usage In User controller register function

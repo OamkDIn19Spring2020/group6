@@ -14,17 +14,6 @@ if ($program[0]['product_id'] == 1) {
     echo '<a href="#">Weight Training</a>';
 }
 echo '</th>';
-// echo '<th class="workout">';
-// if ($program[0]['product_id'] == 2) {
-//     echo '<a href="#">Cardio</a>';
-// }
-// echo '</th>';
-// echo '<th class="workout">';
-// if ($program[0]['product_id'] == 3) {
-//     echo '<a>MMA</a>';
-// }
-// echo '</th>';
-
 ?>
                         </tr>
                     </thead>

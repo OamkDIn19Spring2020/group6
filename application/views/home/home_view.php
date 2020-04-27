@@ -47,13 +47,11 @@
                                     <label>Enter Username</label>
                                     <input type="text" name="username" class="form-control"
                                         value=<?php echo set_value('username'); ?>>
-                                    <!-- <span class="text-danger"><?php echo form_error('username') ?></span> -->
                                 </div>
                                 <div class="form-group">
                                     <label>Enter Password</label>
                                     <input type="password" name="password" class="form-control"
                                         value=<?php echo set_value('password') ?>>
-                                    <!-- <span class="text-danger"><?php echo form_error('password') ?></span> -->
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary" id="login-button" name="login"
