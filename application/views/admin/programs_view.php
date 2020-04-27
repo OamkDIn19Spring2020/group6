@@ -22,8 +22,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?=site_url('admin/programs')?>">
-                            Programs
+                        <a class="nav-link" href="<?=site_url('admin/workouts')?>">
+                            Workouts
                         </a>
                     </li>
                 </ul>
@@ -36,7 +36,7 @@
                 <div class="btn-toolbar mb-2 mb-md-0">
                 </div>
             </div>
-            <h2>Programs</h2>
+            <h2>Add Workout</h2>
             <div class="orders-container">
                 <form id="program_form" action="<?=site_url('admin/insert_program');?>" method="post">
                     <div class="form-group">

@@ -43,6 +43,47 @@ class Admin extends CI_Controller
     }
 
     // ------------------------------------------------------------------------
+    // This links to the workouts page in admin dashboard
+    public function workouts()
+    {
+        $data['workout'] = $this->Program_model->get(array('product_id' => '2'));
+        // echo '<pre>';
+        // print_r($data["workout"]);
+        // $this->output->enable_profiler(true);
+        $data['page'] = 'admin/workouts_view';
+        $this->load->view('admin/menu/content_view', $data);
+    }
+
+    // ------------------------------------------------------------------------
+
+    public function edit_workout()
+    {
+        $program_id = $this->input->post('program_id');
+        $data = array(
+            'title' => $this->input->post('title'),
+            'workout_one' => $this->input->post('workout_one'),
+            'workout_two' => $this->input->post('workout_two'),
+            'workout_three' => $this->input->post('workout_three'),
+            'sets_one' => $this->input->post('sets_one'),
+        );
+        $result = $this->Program_model->insert_update($data, $program_id);
+        // $data['workout'] = $this->Program_model->get(array('product_id' => '2'));
+        // echo '<pre>';
+        // print_r($result);
+        // $this->output->enable_profiler(true);
+        if ($result == 0) {
+            $data['message'] = 'You can not update this workout program';
+            $data['return_url'] = 'index';
+            $data['page'] = 'admin/workouts_view';
+            $this->load->view('admin/menu/content_view', $data);
+        } else {
+            $data['page'] = 'admin/workouts_view';
+            $this->load->view('admin/menu/content_view', $data);
+        }
+
+    }
+
+    // ------------------------------------------------------------------------
 
     // Used on Programs_view page
     public function insert_program()
@@ -71,7 +112,7 @@ class Admin extends CI_Controller
             $result = $this->Program_model->insert($data);
             if ($result > 0) {
                 $data['message'] = 'New Workout Added To Database';
-                $data['return_url'] = 'programs';
+                $data['return_url'] = 'workouts';
                 $data['page'] = 'admin/feedback_modal';
                 $this->load->view('admin/menu/content_view', $data);
             }
@@ -163,6 +204,25 @@ class Admin extends CI_Controller
         } else {
             $data['message'] = 'Product Deleted';
             $data['return_url'] = 'orders';
+            $data['page'] = 'admin/feedback_modal';
+            $this->load->view('admin/menu/content_view', $data);
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    // Used on workouts_view page
+    public function delete_workout()
+    {
+        $program_id = $this->input->post('program_id');
+        $test = $this->Program_model->delete($program_id);
+        if ($test == 0) {
+            $data['message'] = 'You can not delete this workout';
+            $data['return_url'] = 'workouts';
+            $data['page'] = 'admin/feedback_modal';
+            $this->load->view('admin/menu/content_view', $data);
+        } else {
+            $data['message'] = 'Workout Deleted';
+            $data['return_url'] = 'workouts';
             $data['page'] = 'admin/feedback_modal';
             $this->load->view('admin/menu/content_view', $data);
         }
