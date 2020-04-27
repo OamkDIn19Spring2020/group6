@@ -18,7 +18,7 @@ class Admin extends CI_Controller
     public function index()
     {
         // This links to the customers/main page in admin dashboard
-        $data['customers'] = $this->User_model->get_users();
+        $data['customers'] = array_slice($this->User_model->get_users(), 1);
         $data['page'] = 'admin/customers_view';
         $this->load->view('admin/menu/content_view', $data);
     }
@@ -70,6 +70,7 @@ class Admin extends CI_Controller
             $data['page'] = 'admin/workouts_view';
             $this->load->view('admin/menu/content_view', $data);
         } else {
+            $data['workout'] = $this->Program_model->get(array('product_id' => '2'));
             $data['page'] = 'admin/workouts_view';
             $this->load->view('admin/menu/content_view', $data);
         }
