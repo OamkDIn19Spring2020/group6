@@ -61,7 +61,8 @@
                         <div class="col-sm-4">
                             <select id="product_id" name="product_id">
                                 <option value="">Categories</option>
-                                <option value="1">Weights</option>
+                                <!-- To prevent new workouts added to in Weight Training so wont populate calendar_view-->
+                                <!-- <option value="1">Weights</option> -->
                                 <option value="2">Cardio</option>
                                 <option value="3">MMA</option>
                             </select>

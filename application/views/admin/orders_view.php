@@ -54,12 +54,6 @@
 foreach ($products as $row) {
     echo '<tr>';
     echo '<td>' . $row['username'] . '</td><td>' . $row['product_id'] . '</td><td>' . $row['product_name'] . '</td><td>' . $row['product_price'] . '</td>';
-    // echo '<td><button type="button" id="editBtn" class="btn btn-primary myBtn" data-toggle="modal"
-    //         data-target="#editModal" data-purchase_id="' . $row['purchase_id'] . '" data-username="' . $row['username'] . '" data-product_name="' . $row['product_name'] . '">
-    //         Edit
-    //       </button></td>';
-    // echo '<td><button type="button" id="deleteBtn" class="btn btn-danger myBtn" data-toggle="modal" data-target="#deleteModal"
-    //         data-purchase_id="' . $row['purchase_id'] . '" data-username="' . $row['username'] . '" data-product_name="' . $row['product_name'] . '">Delete</button></td>';
     echo '</tr>';
 }
 
@@ -105,7 +99,6 @@ foreach ($products as $row) {
                 </div>
             </div>
             <!-- deleteModal -->
-            <!-- TODO THIS IS TEMPLATE -->
             <div class="modal fade" id="deleteModal" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content modalcontent">

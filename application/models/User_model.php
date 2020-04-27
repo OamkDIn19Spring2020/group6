@@ -80,11 +80,10 @@ class User_model extends CI_Model
     // function used my admin on customer page
     public function update_user($user_id, $update_data)
     {
-        if (!is_numeric($user_id) == 1) {
-            $this->db->where('user_id', $user_id);
-            $this->db->update('user_database', $update_data);
-            return $this->db->affected_rows();
-        }
+        $this->db->where('user_id', $user_id);
+        $this->db->update('user_database', $update_data);
+        return $this->db->affected_rows();
+
     }
 
     // ------------------------------------------------------------------------
@@ -95,19 +94,17 @@ class User_model extends CI_Model
      */
     public function delete_user($user_id)
     {
-        if (!is_numeric($user_id) == 1) {
-            if (is_numeric($user_id)) {
-                $this->db->where($this->_primary_key, $user_id);
-            } elseif (is_array($user_id)) {
-                foreach ($user_id as $_key => $_value) {
-                    $this->db->where($_key, $_value);
-                }
-            } else {
-                die("You must pass a parameter to the DELETE() method.");
+        if (is_numeric($user_id)) {
+            $this->db->where($this->_primary_key, $user_id);
+        } elseif (is_array($user_id)) {
+            foreach ($user_id as $_key => $_value) {
+                $this->db->where($_key, $_value);
             }
-            $this->db->delete($this->_table);
-            return $this->db->affected_rows();
+        } else {
+            die("You must pass a parameter to the DELETE() method.");
         }
+        $this->db->delete($this->_table);
+        return $this->db->affected_rows();
 
     }
 
