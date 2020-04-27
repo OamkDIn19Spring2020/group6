@@ -22,8 +22,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?=site_url('admin/programs')?>">
-                            Programs
+                        <a class="nav-link" href="<?=site_url('admin/workouts')?>">
+                            Workouts
                         </a>
                     </li>
                 </ul>
