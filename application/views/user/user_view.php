@@ -10,23 +10,23 @@
                             CHEST<br>
                             <button id="myBtn" style="margin-top: 10px;">VIEW</button>
                         </td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td id="weeks">
                             <div>Week 1&2</div> <br>
                             <div>Week 3&4</div>
