@@ -80,10 +80,10 @@ class User_model extends CI_Model
     // function used my admin on customer page
     public function update_user($user_id, $update_data)
     {
-
         $this->db->where('user_id', $user_id);
         $this->db->update('user_database', $update_data);
         return $this->db->affected_rows();
+
     }
 
     // ------------------------------------------------------------------------
@@ -94,7 +94,6 @@ class User_model extends CI_Model
      */
     public function delete_user($user_id)
     {
-
         if (is_numeric($user_id)) {
             $this->db->where($this->_primary_key, $user_id);
         } elseif (is_array($user_id)) {

@@ -5,6 +5,18 @@
         <div class="table-responsive">
             <table class="table">
                 <tbody>
+                    <thead>
+                        <tr>
+                            <?php
+
+echo '<th class="workout">';
+if ($program[0]['product_id'] == 1) {
+    echo '<a href="#">Weight Training</a>';
+}
+echo '</th>';
+?>
+                        </tr>
+                    </thead>
 
                     <?php
 for ($i = 1; $i <= 4; $i++) {
@@ -64,7 +76,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
                     </div>
                     <div class="navigation">
                         <div><a href="<?=site_url('user')?>">Calendar</a></div>
-                        <div>Manage Account</div>
+                        <div><a href="<?=site_url('settings')?>">Manage Account</a></div>
                         <div><a href="<?=site_url('stats')?>">Stats</a></div>
                         <div><a href="<?=site_url('products')?>">Products</a></div>
                         <div><a href="<?=site_url('purchase_history')?>">Purchase history</a></div>

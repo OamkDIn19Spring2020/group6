@@ -27,7 +27,6 @@ if ($this->session->flashdata('message')) {
             <div class="form-group">
                 <input type="password" name="reg_password" class="form-control"
                     value="<?php echo set_value('reg_password') ?>" placeholder="Enter Password">
-                <!-- <span class="text-danger"><?php echo form_error('reg_password') ?></span> -->
             </div>
             <div class="form-group">
                 <input type="password" name="confirm_password" class="form-control"
@@ -89,7 +88,5 @@ if ($this->session->flashdata('message')) {
 </div>
 
 <script>
-// TODO not working correctly yet
-// code to toggle the gender checkbox
 $('.custom-control-input').prop('indeterminate', true);
 </script>

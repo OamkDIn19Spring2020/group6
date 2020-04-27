@@ -9,7 +9,7 @@
                 <p style="color:black;">Enjoy your new daily workouts.</p>
             </div>
             <div class="modal-footer">
-                <a href=<?=site_url('admin/show_programs');?>><button type="button" class="btn btn-primary" style="color: white;
+                <a href=<?=site_url('user');?>><button type="button" class="btn btn-primary" style="color: white;
     font-family: 'Play';
     font-weight: 700;
     border: 1px solid white;

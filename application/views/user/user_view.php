@@ -10,23 +10,23 @@
                             CHEST<br>
                             <button id="myBtn" style="margin-top: 10px;">VIEW</button>
                         </td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td id="weeks">
                             <div>Week 1&2</div> <br>
                             <div>Week 3&4</div>
@@ -99,7 +99,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
                     </div>
                     <div class="navigation">
                         <div><a href="<?=site_url('user')?>">Calendar</a></div>
-                        <div>Manage Account</div>
+                        <div><a href="<?=site_url('settings')?>">Manage Account</a></div>
                         <div><a href="<?=site_url('stats')?>">Stats</a></div>
                         <div><a href="<?=site_url('products')?>">Products</a></div>
                         <div><a href="<?=site_url('purchase_history')?>">Purchase history</a></div>
